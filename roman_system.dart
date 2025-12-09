@@ -9,17 +9,16 @@ int romanToInt(String s) {
     "M": 1000,
   };
 
-  var romanDigitNumSymbols = ["I", "V", "X", "L", "C", "D", "M"];
+  int result = 0;
 
-  List<String> chars = s.split("");
+  for (int i = 0; i < s.length; i++) {
+    int value = romanDigitNumbers[s[i]]!;
+    int nextValue = (i + 1 < s.length) ? romanDigitNumbers[s[i + 1]]! : 0;
 
-  var result = 0;
-
-  for (var char in chars) {
-    if (romanDigitNumSymbols.contains(char)) {
-      if (char == romanDigitNumbers[char]) {
-        result = result + romanDigitNumbers[char];
-      }
+    if (value < nextValue) {
+      result -= value;
+    } else {
+      result += value;
     }
   }
 
