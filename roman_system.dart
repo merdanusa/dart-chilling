@@ -11,9 +11,17 @@ int romanToInt(String s) {
 
   var romanDigitNumSymbols = ["I", "V", "X", "L", "C", "D", "M"];
 
-  var parsedStr = int.parse(s);
+  List<String> chars = s.split("");
 
-  
+  var result = 0;
 
-  return 0;
+  for (var char in chars) {
+    if (romanDigitNumSymbols.contains(char)) {
+      if (char == romanDigitNumbers[char]) {
+        result = result + romanDigitNumbers[char];
+      }
+    }
+  }
+
+  return result;
 }
