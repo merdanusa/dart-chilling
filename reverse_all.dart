@@ -1,5 +1,5 @@
 void main() {
-  reverseWords("Hello, World!");
+  reverseWords("Hello World!");
 }
 
 String reverseWords(String text) {
