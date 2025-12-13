@@ -1,9 +1,17 @@
 void main() {
-  print(capitalize("Hello World!"));
+  print(capitalize("hello")); // HeLlO
 }
 
-List<String> capitalize(String x) {
-  List<String> xList = x.split("");
-  print(xList);
-  return [x];
+String capitalize(String x) {
+  List<String> xList = x.split('');
+
+  for (var i = 0; i < xList.length; i++) {
+    if (i.isOdd) {
+      xList[i] = xList[i].toUpperCase();
+    } else {
+      xList[i] = xList[i].toLowerCase();
+    }
+  }
+
+  return xList.join('');
 }
