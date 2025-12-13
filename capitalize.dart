@@ -2,16 +2,19 @@ void main() {
   print(capitalize("hello"));
 }
 
-String capitalize(String x) {
-  List<String> xList = x.split('');
+List<String> capitalize(String s) {
+  String evenCaps = '';
+  String oddCaps = '';
 
-  for (var i = 0; i < xList.length; i++) {
-    if (i.isOdd) {
-      xList[i] = xList[i].toUpperCase();
+  for (var i = 0; i < s.length; i++) {
+    if (i.isEven) {
+      evenCaps += s[i].toUpperCase();
+      oddCaps += s[i];
     } else {
-      xList[i] = xList[i].toLowerCase();
+      evenCaps += s[i];
+      oddCaps += s[i].toUpperCase();
     }
   }
 
-  return xList.join('');
+  return [evenCaps, oddCaps];
 }
