@@ -3,8 +3,8 @@ void main() {
 }
 
 String reverseWords(String text) {
-  List<String> words = text.split(' ');
-  String letters = words.join("").split("").reversed.join("");
-  print({words, letters});
-  return "";
+  return text
+      .split(' ')
+      .map((word) => word.split('').reversed.join(''))
+      .join(' ');
 }
