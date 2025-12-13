@@ -1,10 +1,9 @@
 void main() {
-  print(reverseWords("Hello World!"));
+  print(capitalize("Hello World!"));
 }
 
-String reverseWords(String text) {
-  return text
-      .split(' ')
-      .map((word) => word.split('').reversed.join(''))
-      .join(' ');
+List<String> capitalize(String x) {
+  List<String> xList = x.split("");
+  print(xList);
+  return [x];
 }
