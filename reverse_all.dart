@@ -4,6 +4,7 @@ void main() {
 
 String reverseWords(String text) {
   List<String> words = text.split(' ');
-  print(words);
+  List<String> letters = words.join("").split("");
+  print({words, letters});
   return "";
 }
